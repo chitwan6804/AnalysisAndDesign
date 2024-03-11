@@ -61,7 +61,7 @@ int main() {
         avgtime_iter = (time2 - time1) / 4.0;
         cout<<" - "<<avgtime_iter*100 << endl;
         
-        cout<<"Power of number using Recursion!";
+        cout<<"Power of number using divide and conquer technique!";
 
         time1 = (double)clock();
         for (int k = 0; k <= 15; k=k+5) {
