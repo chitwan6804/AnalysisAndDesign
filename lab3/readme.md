@@ -21,6 +21,8 @@ This C++ program demonstrates the implementation of the Merge Sort algorithm to 
 **Time Complexity:**
 
 The time complexity of Merge Sort is analyzed. It is O(n log n), where "n" represents the number of elements in the array. This complexity arises from the logarithmic nature of the divide step (log n) and the linear time complexity of the merging step (n). The O(n log n) time complexity makes Merge Sort efficient for large datasets.
+![merge-sort](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/ee794830-f799-4059-a3bb-95729a76ccda)
+
 
 **Use Cases:**
 
