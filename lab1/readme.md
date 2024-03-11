@@ -88,6 +88,9 @@ The Tower of Hanoi problem is often used to demonstrate the principles of recurs
 
 # Problem 5: Possible Combinations of true false for n tries
 
+The True False Generator is a program that generates all possible combinations of true (T) and false (F) values for a given number of elements.
+
+
 **Pseudocode And Recurrsion tree**
 ![truefalse](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/3b8d316d-c975-48ff-9fde-9201c6302f37)
 
