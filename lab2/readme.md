@@ -23,8 +23,18 @@ The recursive method uses a divide and conquer approach to calculate the power o
 -Find correct position of first number present in the array.Such that all numbers smaller that the given number is to its left and all greater number to its right.
 
 **Pseudocode:**
+![actual_pos](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/e7cbf0b5-2a50-4ed4-9e18-2c7618ae3320)
 
 
 **Time Complexity:**
 ![actual_position](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/ff5fe282-dad7-488a-9ad8-572a74c65e2f)
 
+# Problem 3: Merge 2 sorted list in sorted order:
+
+**Pseudocode:**
+![merge](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/3b48164b-059c-4263-9bce-920d8b5c022b)
+
+
+**Time Complexity:**
+Time Complexity to find actual position is:- O(n*n)
+![sort 2 sorted list](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/3d7f909f-f3a1-4c56-87e9-88f7a5deb9e5)
