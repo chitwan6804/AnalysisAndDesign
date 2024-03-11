@@ -30,6 +30,7 @@ The recursive method uses a divide and conquer approach to calculate the power o
 ![actual_position](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/ff5fe282-dad7-488a-9ad8-572a74c65e2f)
 
 # Problem 3: Merge 2 sorted list in sorted order:
+This C++ program demonstrates the merging of two sorted lists into a single sorted list.The program generates two sorted lists of integers, list1 and list2, with random values. It then merges these two lists into a single sorted list, list3, using a merging algorithm. The merging process involves iterating through both lists simultaneously and selecting the smaller element from each list to populate list3.
 
 **Pseudocode:**
 ![merge](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/3b48164b-059c-4263-9bce-920d8b5c022b)
