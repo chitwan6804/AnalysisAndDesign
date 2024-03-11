@@ -12,6 +12,7 @@ There are several variations of the knapsack problem, including:
 5. Unbounded Knapsack Problem: There is an unlimited quantity of each item available.
 
 **Pseudocode**
+![knapsack](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/7b816262-cec1-41db-943a-ba175d16f705)
 
 
 **Time Complexity:**
@@ -30,6 +31,9 @@ The Activity Selection Problem involves selecting a maximum set of non-overlappi
 
 
 **Pseudocode**
+![activityselector](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/f7db24de-449f-483e-971d-586ce18c8d3c)
+
+
 **Time Complexity:**
 
 The time complexity of the algorithm is O(n log n), where "n" is the number of activities. Sorting the activities based on finish times is the primary contributor to the time complexity.
@@ -48,6 +52,8 @@ The time complexity of the algorithm is O(n log n), where "n" is the number of a
 Binary search is a powerful and efficient algorithm for finding a specific element in a sorted array. This algorithm follows the divide and conquer paradigm, reducing the search space by half in each step. This README provides a concise guide to understanding and implementing binary search. Binary search works by repeatedly dividing the search interval in half. It compares the middle element of the interval to the target value and eliminates half of the remaining elements from consideration.
 
 **Pseudocode**
+![binarysearch](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/627926f1-cbf7-4f03-9703-55b1a0f637e3)
+
 
 **Time Complexity :** 
 Binary search has a time complexity of O(log n), where n is the number of elements in the array. This efficiency makes it significantly faster than linear search algorithms, especially for large datasets.
