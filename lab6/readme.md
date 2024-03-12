@@ -3,7 +3,8 @@
 The algorithm solves the shortest path problem in a multistage graph, where the graph is organized into several stages, and the goal is to find the minimum-cost path from the starting node to the ending node.
 
 **Pseudocode:**
-![Uploading multistage.jpg…]()
+![multistage](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/40fa0021-9c80-453d-8847-411e5c049dfd)
+
 
 
 **Time Complexity**
