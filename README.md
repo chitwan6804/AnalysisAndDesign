@@ -29,7 +29,7 @@ Lab 4:-
 
 Lab 5:-
 1. Prims algo
-2. Single source shortest distance
+2. Single source shortest path
 
 Lab 6:-
 1. Multistage Graph
