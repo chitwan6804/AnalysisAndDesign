@@ -3,6 +3,7 @@
 The algorithm solves the shortest path problem in a multistage graph, where the graph is organized into several stages, and the goal is to find the minimum-cost path from the starting node to the ending node.
 
 **Pseudocode:**
+![Uploading multistage.jpg…]()
 
 
 **Time Complexity**
@@ -14,6 +15,7 @@ The time complexity of the Multistage Graph algorithm is O(V^2), where V is the 
 Kruskal's algorithm is a greedy algorithm that finds a minimum spanning tree for a connected, undirected graph. It works by sorting the edges in non-decreasing order of weight and adding each edge to the MST as long as it does not form a cycle. The Disjoint-Set data structure is used to efficiently check whether adding an edge creates a cycle
 
 **Pseudocode:**
+![kruskal](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/6482cdd3-1656-439d-b317-3cd94d604373)
 
 
 **Time Complexity**
