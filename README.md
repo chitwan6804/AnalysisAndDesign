@@ -19,7 +19,11 @@ Lab 3:-
 1. MinMax
 2. Merge sort
 3. Quick sort
-4. Magic square
+4. Quick Sort Iterative
+5. Matrix MUltiplication
+6. Strassens Multiplication
+7. Magic square
+   
 
 Lab 4:-
 1. Knapsack
@@ -34,3 +38,7 @@ Lab 5:-
 Lab 6:-
 1. Multistage Graph
 2. Kruskal Algorithm
+
+Lab 7:-
+1. Assembly Line Schedulling Algorithm
+2. Matrix Chain Multiplication
