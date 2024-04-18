@@ -62,3 +62,24 @@ __Time Complexity:__
 •	Therefore, the overall time complexity is cubic in terms of the number of matrices, making it efficient for moderately sized inputs but less efficient for very large sequences of matrices.
 
 
+## Problem 2: All Pair Shortest Path
+
+__Aim:__
+
+The Floyd-Warshall algorithm efficiently computes the shortest paths between all pairs of vertices in a weighted graph by iteratively considering each vertex as a potential intermediate node. It initializes matrices to store shortest distances and predecessor information, then updates these matrices by systematically examining all pairs of vertices, checking for shorter paths through intermediate vertices. Once completed, the algorithm provides the shortest distances between all vertex pairs and enables the reconstruction of the shortest paths.
+
+__Algorithm:__
+
+1. Initialization: Create a 2D array dist[][] of size V x V, where V is the number of vertices in the graph. Initialize this array such that dist[i][j] represents the weight of the edge from vertex i to vertex j. If there is no edge from i to j, set dist[i][j] to infinity. Also, initialize the diagonal elements (dist[i][i]) to 0.
+
+2. Main Loop: Perform iterations over all vertices k from 1 to V. This k represents an intermediate vertex in the shortest paths being considered.
+
+3. Path Update: For each pair of vertices (i, j), update dist[i][j] as min(dist[i][j], dist[i][k] + dist[k][j]). This step essentially checks if going through vertex k can lead to a shorter path between vertices i and j compared to the currently known shortest path.
+
+4. Iterative Update: Repeat step 3 for all possible pairs of vertices i and j for each intermediate vertex k.
+
+5. Result: After the iterations are complete, the dist[][] array will contain the shortest paths between all pairs of vertices. The value dist[i][j] represents the shortest path distance from vertex i to vertex j.
+
+__Time Complexity__
+
+Time-complexity is O (V^3).
