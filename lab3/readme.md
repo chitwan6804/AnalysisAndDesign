@@ -60,3 +60,82 @@ This C++ program demonstrates the implementation to generate a magic square. A m
 
 **Time Complexity:**
 ![magic square](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/09db45cb-de2c-4516-86a4-be978f09f885)
+
+# Problem 5: Matrix Multiplication
+
+__Aim:__
+
+Write a program to Implement matrix multiplication using the divide and conquer approach and measure the average time taken for matrix multiplication for matrices of increasing sizes.
+
+__Problem Statement:__
+
+Implementing a matrix multiplication algorithm using the divide and conquer approach. Given two matrices A and B of dimensions n×n, the algorithm should compute their product C = A * B. The matrices A, B, and C are represented as 2D integer arrays.
+
+__Algorithm:__
+
+Matrix Multiplication (matrix_multiply function):
+1.	If the size of the input matrices A and B is 1x1, perform a simple multiplication and return the result.
+2.	Otherwise, divide each matrix into four submatrices: A11, A12, A21, A22 and B11, B12, B21, B22.
+3.	Recursively compute the intermediate matrices P1 to P8 using matrix multiplication and addition:
+•	P1=A11×B11
+•	P2=A12×B21
+•	P3=A11×B12
+•	P4=A12×B22
+•	P5=A21×B11
+•	P6=A22×B12
+•	P7=A21×B21
+•	P8=A22×B22
+4.	Compute the submatrices C11, C12, C21, C22:
+•	C11=P1+P2
+•	C12=P3+P4
+•	C21=P5+P6
+•	C22=P7+P8
+5.	Combine the submatrices to obtain the final result matrix C.
+
+__Time Complexity:__
+
+•	Let T(n) represent the time complexity of multiplying two n×n matrices.
+•	In each recursive call, the matrices are divided into four submatrices of size n/2×n/2. This step has constant time complexity.
+•	After dividing, eight recursive calls are made to multiply smaller matrices: T(n/2) for each call.
+•	Additionally, adding and combining matrices takes O(n^2) time.
+•	Therefore, the recurrence relation for the time complexity can be expressed as: T(n)=8T(n/2) + O(n^2)
+•	Using the Master Theorem, the time complexity of matrix multiplication using the divide and conquer approach is O (n log8)=O(n^3).
+
+__Practically:__
+
+![Matrix_Multiplication](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/ffd71f08-ed0a-4fd6-98e7-1a9da3af100f)
+
+# Problem 6: Matrix Multiplication using Strassens
+
+__Aim:__
+
+Write a program to implement a matrix multiplication algorithm using the Strassen's algorithm, which is a divide-and-conquer approach for multiplying matrices efficiently.
+
+__Problem Statement:__
+
+The problem addressed by the code is as follows: Given two square matrices A and B of size n×n, where n is a power of 2, the task is to compute their product C=A×B efficiently using the Strassen's algorithm. The Strassen's algorithm aims to reduce the number of scalar multiplications involved in matrix multiplication compared to the traditional method, thus improving the overall computational efficiency.
+
+__Algorithm:__
+
+•	Check if the input matrices are of size 1. If so, perform scalar multiplication and return the result.
+•	Divide the input matrices A and B into four submatrices each: A11,A12,A21,A22 and B11,B12,B21,B22.
+•	Compute 10 submatrices P, Q, R, S, T, U, V, X, Y, Z using the formulas of Strassen's algorithm.
+•	Compute the resulting submatrices C11, C12, C21,C22 by adding and subtracting the previously computed submatrices.
+•	Combine the resulting submatrices into a single matrix C and return it.
+
+__Time Complexity:__
+
+•	Let T(n) represent the time complexity of multiplying two n×n matrices using the Strassen's algorithm.
+•	Divide Step:Dividing the matrices into submatrices requires O(n^2) time.
+•	Recursive Calls:
+	In each recursive call, the problem size is reduced by half, resulting in a total of 7 recursive calls.
+	Therefore, the time complexity of the recursive calls is 7T(n/2).
+•	Combine Step: Combining the submatrices into the result matrix requires O(n^2) time.
+•	Overall Time Complexity: T(n)=7T(n/2)+O(n^2)
+	By solving the recurrence relation using the Master Theorem or recurrence tree method, the time complexity of the Strassen's algorithm for matrix multiplication is determined to be approximately 
+	O(n log 7), which is approximately O(n^2.81).
+
+__Practically:__
+
+![strassens](https://github.com/chitwan6804/AnalysisAndDesign/assets/128251060/7497f158-f4e1-4620-abcf-4e06b83b46ba)
+
