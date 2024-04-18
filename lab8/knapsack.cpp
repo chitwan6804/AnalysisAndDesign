@@ -1,102 +1,109 @@
 #include <iostream>
+#include <set>
 #include <vector>
+#include<climits>
 using namespace std;
 
-void merge_perge(const vector<pair<int,int>>& S1, const vector<pair<int,int>>& S2, vector<pair<int,int>>& final) {
-    for(const auto& pair1 : S1) {
-        bool should_add = true;
-        for(const auto& pair2 : S2) {
-            // Check if profit of one is more as compared to other but weight of other is more
-            if(pair1.first < pair2.first && pair2.second <pair1.second) {
-                should_add = false;
-                break;
-            }
-        }
-        if(should_add) {
-            final.push_back(pair1);
-        }
+void print(set<pair<int, int>> s)
+{
+    for (auto i : s)
+    {
+        cout << "{" << i.first << "," << i.second << "}"
+             << " , ";
     }
-    for(const auto& pair2 : S2) {
-        bool should_add = true;
-        for(const auto& pair1 : S1) {
-            // Check if profit of one is more as compared to other but weight of other is more
-            if(pair2.first <= pair1.first && pair1.second <= pair2.second) {
-                should_add = false;
-                break;
-            }
-        }
-        if(should_add) {
-            final.push_back(pair2);
-        }
-    }
+    cout << endl;
 }
 
-void Print(int maxprofit, int usedweight, const vector<pair<int,int>>& knapsack, int items, const vector<vector<pair<int,int>>>& S) {
-    vector<int> x(items, 0);
-    for(int i = 0; i < items; i++) {
-        if(maxprofit == S[items-1][i].first && usedweight == S[items-1][i].second) {
-            x[items] = 1;
-            maxprofit -= S[items-1][i].first;
-            usedweight -= S[items-1][i].second;
-        }
+int find_max_value(set<pair<int, int>> &s)
+{
+    int max_value = INT_MIN;
+    for (auto i : s)
+    {
+        max_value = max(max_value, i.first);
     }
-    cout << "Selected pairs:\n{ ";
-    for(int i = 0; i < items; i++) {
-        if(x[items] == 1) {
-            cout << "( " << knapsack[i].first << ", " << knapsack[i].second << " ) ";
-        }
-    }
-    cout << "}" << endl;
+    return max_value;
 }
 
+vector<int> find_max_path(set<pair<int, int>> &s, int max_value, vector<int> &p, vector<int> &w)
+{
+    vector<int> path;
+    for (auto i : s)
+    {
+        if (i.first == max_value)
+        {
+            int remaining_weight = i.second;
+            for (int j = p.size() - 1; j >= 0; j--)
+            {
+                if (i.second - w[j] >= 0)
+                {
+                    path.push_back(j);
+                    remaining_weight -= w[j];
+                    i.second -= w[j];
+                }
+                if (remaining_weight == 0)
+                    break;
+            }
+            break;
+        }
+    }
+    reverse(path.begin(), path.end());
+    return path;
+}
 
-int main(){
-    vector<pair<int,int>> knapsack;
-    cout<<"Enter number of items: ";
-    int items;
-    cin>>items;
-    cout<<"Enter maximum weight: ";
-    int maxweight;
-    cin>>maxweight;
-    for(int i=0;i<items;i++){
-        int first;
-        int second;
-        cout<<"Enter profit for item "<<i+1<<": ";
-        cin>>first;
-        cout<<"Enter weight for item "<<i+1<<": ";
-        cin>>second;
-        knapsack.push_back(make_pair(first,second));
-    }
-    cout<<"Profit\tWeight";
-    for (const auto& pair : knapsack) {
-        cout<< endl<< pair.first << "\t" << pair.second ;
-    }
-    vector<vector<pair<int,int>>> S(items+1);
-    vector<pair<int,int>> V;
-    S[0].push_back(make_pair(0,0));
-    int i=0;
-    while(i<items){
-        for (const auto& pair2 : S[i]){
-            if(pair2.second+knapsack[i].second<=maxweight){
-                V.push_back(make_pair(pair2.first+knapsack[i].first, pair2.second+knapsack[i].second));
+set<pair<int, int>> merge_purge(set<pair<int, int>> &s1, set<pair<int, int>> &s2, int W)
+{
+    set<pair<int, int>> s3;
+    for (auto i : s1)
+    {
+        for (auto j : s2)
+        {
+            if (i.second <= W && j.second <= W)
+            {
+                if (i.first < j.first && i.second > j.second)
+                {
+                    continue;
+                }
+                s3.insert(i);
+                s3.insert(j);
             }
         }
-        merge_perge(S[i],V,S[i+1]);
-        i++;
     }
-    cout << "\nAll possible combinations in vector S:\n";
-    int maxprofit=0;
-    int usedweight;
-    cout<<"{ ";
-    for (const auto& pair : S[items]) {
-        cout <<"( " <<pair.first << "," << pair.second << " )";
-        if(maxprofit<pair.first){
-            maxprofit=pair.first;
-            usedweight=pair.second;
+    return s3;
+}
+
+void knapsack(int n, vector<int> &p, vector<int> &w, int W)
+{
+    set<pair<int, int>> s1 = {{0, 0}};
+    for (int i = 0; i < n; i++)
+    {
+        set<pair<int, int>> s2;
+        for (auto j : s1)
+        {
+            s2.insert({j.first + p[i], j.second + w[i]});
         }
+        s1 = merge_purge(s1, s2, W);
     }
-    cout<<" }";
-    cout<<"\nMax Profit: "<<maxprofit<<endl;
-    Print(maxprofit,usedweight,knapsack,items,S);
+    print(s1);
+    int max_value = find_max_value(s1);
+    cout << "Maximum value: " << max_value << endl;
+
+    vector<int> path = find_max_path(s1, max_value, p, w);
+    cout << "Selected items for maximum value: ";
+    for (int i = 0; i < path.size(); i++)
+    {
+        cout << path[i] << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    int n = 4;
+    vector<int> p = {10, 40, 30, 50};
+    vector<int> w = {5, 4, 6, 3};
+    int W = 10;
+
+    knapsack(n, p, w, W);
+
     return 0;
 }
