@@ -42,3 +42,15 @@ Lab 6:-
 Lab 7:-
 1. Assembly Line Schedulling Algorithm
 2. Matrix Chain Multiplication
+3. All Pair Shortest Path
+
+Lab 8:-
+1. Longest Common Subsequence
+2. Merge Purge
+3. Knapsack using Merge Purge
+
+Lab 9:-
+1. Graph Coloring
+2. N Queens
+3. Sum of Subsets
+
