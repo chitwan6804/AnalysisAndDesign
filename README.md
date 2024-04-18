@@ -28,8 +28,7 @@ Lab 3:-
 Lab 4:-
 1. Knapsack
 2. Activity selector
-3. Graph is cyclic or not
-4. Binary Search
+3. Binary Search
 
 Lab 5:-
 1. Prims algo
@@ -37,7 +36,8 @@ Lab 5:-
 
 Lab 6:-
 1. Multistage Graph
-2. Kruskal Algorithm
+2. Graph is cyclic or not
+3. Kruskal Algorithm
 
 Lab 7:-
 1. Assembly Line Schedulling Algorithm
